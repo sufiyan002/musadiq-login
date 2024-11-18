@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: red;
+            margin: 0;
+            padding: 0;
+        }
+        .login-container {
+            margin-left: 50%;
+            margin-top: 20px;
+            width: 400px;
+            background-color: #fff;
+            /* border-radius: 10px; */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+        }
+        h1 {
+            text-decoration: underline;
+            margin-bottom: 30px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: red;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .image {
+            float: left;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 140px;
+            height: 525px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="./login_image-removebg-preview.png" alt="">
+        </div>
+        <div class="login-container">
+            <h1>Login</h1>
+            <form onsubmit="return validateForm()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your Username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <button type="submit">LOGIN</button>
+            </form>
+            <p>Forgot password? <a href="#">Click here</a></p>
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (username === 'dotcom' && password === '123456') {
+                window.open('./java1.html');
+                return false; // Prevent form from submitting
+            } else {
+                alert('Username or password is wrong, please try again...');
+                return false; // Prevent form from submitting
+            }
+        }
+    </script>
+</body>
+</html>
